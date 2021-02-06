@@ -27,7 +27,8 @@ const Home = (props) => {
 
     }, [dispatch]);
 
-    console.log(server + 'api/products');
+    console.log(server + '/api/products');
+    console.log(`${server}/api/products`);
 
     const handleSubmit = e => {
         e.preventDefault();
