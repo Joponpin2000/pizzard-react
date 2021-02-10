@@ -51,75 +51,75 @@ function PlaceOrderScreen(props) {
     return (
         <Fragment>
             <Header />
-        <div className="py-5 grey-bg">
-            <CheckoutSteps step1 step2 step3 step4 />
-            <Container>
-                <h4>Shipping</h4>
-                <Row>
-                    <Col md='8'>
-                        {cart.shipping.address}, {cart.shipping.city},
+            <div className="py-5 grey-bg">
+                <CheckoutSteps step1 step2 step3 step4 />
+                <Container>
+                    <h4>Shipping</h4>
+                    <Row>
+                        <Col md='8'>
+                            {cart.shipping.address}, {cart.shipping.city},
                         {cart.shipping.postalCode}, {cart.shipping.country}
-                    </Col>
-                    <Col md='4'>
-                        <div className="text-dark">
-                            Payment Method: <b>{cart.payment.paymentMethod}</b>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md='8'>
-                        {
-                            cartItems.map((item, i) =>
-                                (item && item.productImage !== undefined) && (
+                        </Col>
+                        <Col md='4'>
+                            <div className="text-dark">
+                                Payment Method: <b>{cart.payment.paymentMethod}</b>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md='8'>
+                            {
+                                cartItems.map((item, i) =>
+                                    (item && item.productImage !== undefined) && (
 
-                                    <Row className="my-2" key={i}>
-                                        {
-                                            <Fragment>
-                                                <Col md='6'>
-                                                    <Card>
-                                                        <Card.Img className="product-image" src={server + "/" + item.productImage} alt={item.productName} />
-                                                    </Card>
-                                                </Col>
-                                                <Col md='6'>
-                                                    <Card style={{ 'border': 'none' }}>
-                                                        <Card.Body>
-                                                            <Card.Title>
-                                                                <Link to={"/product/" + item._id} className="text-dark">
-                                                                    {item.productName}
-                                                                </Link>
-                                                            </Card.Title>
-                                                            <Card.Text>
-                                                                Price: ${item.productPrice}
-                                                            </Card.Text>
+                                        <Row className="my-2" key={i}>
+                                            {
+                                                <Fragment>
+                                                    <Col md='6'>
+                                                        <Card>
+                                                            <Card.Img className="product-image" src={server + "/" + item.productName} alt={item.productName} />
+                                                        </Card>
+                                                    </Col>
+                                                    <Col md='6'>
+                                                        <Card style={{ 'border': 'none' }}>
+                                                            <Card.Body>
+                                                                <Card.Title>
+                                                                    <Link to={"/product/" + item._id} className="text-dark">
+                                                                        {item.productName}
+                                                                    </Link>
+                                                                </Card.Title>
+                                                                <Card.Text>
+                                                                    Price: ${item.productPrice}
+                                                                </Card.Text>
                                                         Qty: {item.qty}
-                                                        </Card.Body>
-                                                    </Card>
-                                                </Col>
-                                            </Fragment>
-                                        }
-                                    </Row>
+                                                            </Card.Body>
+                                                        </Card>
+                                                    </Col>
+                                                </Fragment>
+                                            }
+                                        </Row>
+                                    )
                                 )
-                            )
-                        }
-                    </Col>
-                    <Col md='4'>
-                        <Card>
-                            <Card.Body>
-                                <div>
-                                    <h3>Order Summary</h3>
-                                    <p>Items: ${itemsPrice}</p>
-                                    <p>Shipping: ${shippingPrice}</p>
-                                    <p>Tax: ${taxPrice}</p>
-                                    <p>Order Total: <b>${totalPrice}</b></p>
-                                </div>
-                                <Button onClick={placeOrderHandler || alert("Couldn't connect to Paystack")} variant="outline-success" className="btn-block">Place Order</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
-        </div >
-        <Footer />
+                            }
+                        </Col>
+                        <Col md='4'>
+                            <Card>
+                                <Card.Body>
+                                    <div>
+                                        <h3>Order Summary</h3>
+                                        <p>Items: ${itemsPrice}</p>
+                                        <p>Shipping: ${shippingPrice}</p>
+                                        <p>Tax: ${taxPrice}</p>
+                                        <p>Order Total: <b>${totalPrice}</b></p>
+                                    </div>
+                                    <Button onClick={placeOrderHandler || alert("Couldn't connect to Paystack")} variant="outline-success" className="btn-block">Place Order</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Container>
+            </div >
+            <Footer />
         </Fragment>
     )
 }
