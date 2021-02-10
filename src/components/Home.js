@@ -9,6 +9,8 @@ import { listProducts } from '../actions/productActions';
 import { server } from '../api/url';
 import { showLoading } from '../helpers/loading';
 import SideImage from './images/side.png';
+import Header from './header';
+import Footer from './Footer';
 
 const Home = (props) => {
 
@@ -22,7 +24,7 @@ const Home = (props) => {
 
     const dispatch = useDispatch();
     useEffect(() => {
-
+console.log("initial launch")
         dispatch(listProducts());
 
     }, [dispatch]);
@@ -43,6 +45,8 @@ const Home = (props) => {
         }
     };
     return (
+        <Fragment>
+            <Header />
         <div className="mt-3 pt-5">
             {
                 loading ? (
@@ -184,6 +188,8 @@ const Home = (props) => {
                     )
             }
         </div>
+        <Footer />
+        </Fragment>
     );
 };
 

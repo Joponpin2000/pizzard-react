@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, {Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getReceipt } from '../actions/paymentActions';
+import Header from './header';
+import Footer from './Footer';
 
 const Receipt = (props) => {
   const dispatch = useDispatch();
@@ -15,6 +17,8 @@ const Receipt = (props) => {
   const { receipt } = userPayment;
 
   return (
+    <Fragment>
+      <Header />
     <div className="mt-5 pt-5">
       {
         receipt
@@ -53,6 +57,9 @@ const Receipt = (props) => {
 
       }
     </div >
+    <Footer />
+    </Fragment>
+
   );
 };
 

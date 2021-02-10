@@ -3,6 +3,8 @@ import { savePayment } from '../actions/cartAction';
 import { useDispatch } from 'react-redux';
 import CheckoutSteps from './CheckoutSteps';
 import { Button } from 'react-bootstrap';
+import Header from './header';
+import Footer from './Footer';
 
 const Payment = (props) => {
     const [paymentMethod, setPaymentMethod] = useState('');
@@ -40,6 +42,7 @@ const Payment = (props) => {
 
     return (
         <div>
+            <Header />
             <div className="login-container vh-100 pt-5">
                 <CheckoutSteps step1 step2 step3 />
                 <div className="row px-3">
@@ -48,6 +51,7 @@ const Payment = (props) => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
 
     );

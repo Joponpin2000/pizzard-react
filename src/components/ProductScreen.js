@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { detailsProduct } from '../actions/productActions';
 import { showLoading } from '../helpers/loading';
-// import { server } from '../api/url';
+import Header from './header';
+import Footer from './Footer';
 
 const ProductScreen = (props) => {
 
@@ -29,6 +30,7 @@ const ProductScreen = (props) => {
 
     return (
         <Fragment>
+            <Header />
             <div className="grey-bg">
                 <Container className="mt-5 py-5">
                     <Link to="/" className="text-success">Back to home</Link>
@@ -93,6 +95,7 @@ const ProductScreen = (props) => {
                     }
                 </Container>
             </div>
+            <Footer />
         </Fragment>
     )
 }

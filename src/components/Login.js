@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {Fragment, useState, useEffect } from 'react';
 import isEmail from 'validator/lib/isEmail';
 import isEmpty from 'validator/lib/isEmpty';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'react-bootstrap';
+import Header from './header';
+import Footer from './Footer';
 
 
 const Login = (props) => {
@@ -92,15 +94,18 @@ const Login = (props) => {
     );
 
     return (
-
-        <div className="login-container">
-            <div className="row px-3 vh-100">
-                <div className="col-md-5 mx-auto align-self-center pt-5">
-                    {(errormsg || error) && showErrorMsg(errormsg || error)}
-                    {showLoginForm()}
+<Fragment>
+            <Header />
+            <div className="login-container">
+                <div className="row px-3 vh-100">
+                    <div className="col-md-5 mx-auto align-self-center pt-5">
+                        {(errormsg || error) && showErrorMsg(errormsg || error)}
+                        {showLoginForm()}
+                    </div>
                 </div>
             </div>
-        </div>
+    <Footer />
+</Fragment>
 
 
     );

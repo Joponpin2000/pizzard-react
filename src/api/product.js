@@ -26,10 +26,10 @@ export const fetchProducts = async () => {
             "Content-Type": "application/json",
         },
     }
+    console.log(`${server}/api/products`)
 
     const response = await axios.get(`${server}/api/products`, config);
-    console.log(response)
-    console.log(response.data.products)
+    console.log("awaiting response")
     return response.data.products;
 }
 

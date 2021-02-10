@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {Fragment, useEffect, useState } from 'react';
 import isEmail from 'validator/lib/isEmail';
 import isEmpty from 'validator/lib/isEmpty';
 import equals from 'validator/lib/equals';
@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'react-bootstrap';
+import Header from './header';
+import Footer from './Footer';
 
 const Signup = (props) => {
     const [email, setEmail] = useState('');
@@ -104,8 +106,9 @@ const Signup = (props) => {
     )
 
     return (
-
-        <div className="signup-container">
+<Fragment>
+    <Header />
+    <div className="signup-container">
             <div className="row px-3 vh-100">
                 <div className="col-md-5 mx-auto pt-5 align-self-center">
                     {successmsg && showSuccessMsg(successmsg)}
@@ -114,7 +117,8 @@ const Signup = (props) => {
                 </div>
             </div>
         </div>
-
+<Footer />
+</Fragment>
 
     );
 };

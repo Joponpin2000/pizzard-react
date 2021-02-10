@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CheckoutSteps from './CheckoutSteps';
 import { makePayment } from '../actions/paymentActions';
-// import { server } from '../api/url';
+import Header from './header';
+import Footer from './Footer';
 
 function PlaceOrderScreen(props) {
     const cart = useSelector(state => state.cart);
@@ -47,6 +48,8 @@ function PlaceOrderScreen(props) {
     }
 
     return (
+        <Fragment>
+            <Header />
         <div className="py-5 grey-bg">
             <CheckoutSteps step1 step2 step3 step4 />
             <Container>
@@ -115,6 +118,8 @@ function PlaceOrderScreen(props) {
                 </Row>
             </Container>
         </div >
+        <Footer />
+        </Fragment>
     )
 }
 export default PlaceOrderScreen;

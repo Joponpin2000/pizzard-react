@@ -3,6 +3,8 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../actions/cartAction';
+import Header from './header';
+import Footer from './Footer';
 
 function CartScreen(props) {
     const productId = props.match.params.id;
@@ -28,6 +30,7 @@ function CartScreen(props) {
 
     return (
         <Fragment>
+            <Header />
             <div className="grey-bg">
             <Container className="mt-5 py-5">
                 <h4 className="my-4">Shopping Cart</h4>
@@ -97,6 +100,7 @@ function CartScreen(props) {
                 }
             </Container>
             </div>
+            <Footer />
         </Fragment>
     )
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Header from './header';
 import Home from './Home';
 import ProductScreen from './ProductScreen';
 import Login from './Login';
@@ -17,14 +16,12 @@ import Shipping from './Shipping';
 import Payment from './Payment';
 import PlaceOrder from './PlaceOrder';
 import Receipt from './Receipt';
-import Footer from './Footer';
 import Callback from './Callback';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/product/:id" component={ProductScreen} />
@@ -41,7 +38,6 @@ class App extends Component {
           <Route component={NotFound} />
         </Switch>
 
-        <Footer />
       </Router>
     );
   }

@@ -5,6 +5,8 @@ import { useDispatch } from 'react-redux';
 import { showErrorMsg } from '../helpers/message';
 import CheckoutSteps from './CheckoutSteps';
 import { Button } from 'react-bootstrap';
+import Header from './header';
+import Footer from './Footer';
 
 const Shipping = (props) => {
     const [address, setAddress] = useState('');
@@ -67,6 +69,7 @@ const Shipping = (props) => {
 
     return (
         <div>
+            <Header />
             <div className="signup-container vh-100 pt-5">
                 <CheckoutSteps step1 step2 />
                 <div className="row px-3">
@@ -76,6 +79,7 @@ const Shipping = (props) => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
 
     );
