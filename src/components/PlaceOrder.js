@@ -6,6 +6,7 @@ import CheckoutSteps from './CheckoutSteps';
 import { makePayment } from '../actions/paymentActions';
 import Header from './header';
 import Footer from './Footer';
+import { server } from '../api/url';
 
 function PlaceOrderScreen(props) {
     const cart = useSelector(state => state.cart);
@@ -76,7 +77,7 @@ function PlaceOrderScreen(props) {
                                             <Fragment>
                                                 <Col md='6'>
                                                     <Card>
-                                                        <Card.Img className="product-image" src={"/" + item.productImage} alt={item.productName} />
+                                                        <Card.Img className="product-image" src={server + "/" + item.productImage} alt={item.productName} />
                                                     </Card>
                                                 </Col>
                                                 <Col md='6'>

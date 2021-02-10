@@ -6,6 +6,7 @@ import { detailsProduct } from '../actions/productActions';
 import { showLoading } from '../helpers/loading';
 import Header from './header';
 import Footer from './Footer';
+import { server } from '../api/url';
 
 const ProductScreen = (props) => {
 
@@ -45,7 +46,7 @@ const ProductScreen = (props) => {
                                             <Fragment>
                                                 <Col md='4'>
                                                     <Card>
-                                                        <Card.Img className="product-image" src={"/" + product.productImage} alt={product.productName} />
+                                                        <Card.Img className="product-image" src={server + "/" + product.productImage} alt={product.productName} />
                                                     </Card>
                                                 </Col>
                                                 <Col md='4'>

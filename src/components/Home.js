@@ -16,7 +16,6 @@ const Home = (props) => {
 
     const productList = useSelector(state => state.productList);
     const { products, loading, error } = productList;
-    console.log(products)
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -24,7 +23,7 @@ const Home = (props) => {
 
     const dispatch = useDispatch();
     useEffect(() => {
-console.log("initial launch")
+        
         dispatch(listProducts());
 
     }, [dispatch]);
@@ -119,7 +118,7 @@ console.log("initial launch")
                                                                     <Card className="mb-5" border="80">
                                                                         <Link to={"/product/" + product._id}>
                                                                             <Card.Img height='200'
-                                                                             src={"/" + product.productImage} 
+                                                                             src={server + "/" + product.productImage}
                                                                              alt={product.productName} />
                                                                         </Link>
                                                                         <Card.Body>

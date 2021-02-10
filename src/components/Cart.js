@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../actions/cartAction';
 import Header from './header';
 import Footer from './Footer';
+import { server } from '../api/url';
 
 function CartScreen(props) {
     const productId = props.match.params.id;
@@ -51,7 +52,7 @@ function CartScreen(props) {
                                                     <Fragment>
                                                         <Col md='6'>
                                                             <Card>
-                                                                <Card.Img className="product-image" src={"/" + item.productImage} />
+                                                                <Card.Img className="product-image" src={server + "/" + item.productImage} />
                                                             </Card>
                                                         </Col>
                                                         <Col md='6'>
