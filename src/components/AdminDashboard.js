@@ -13,8 +13,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faPlus, faMoneyCheckAlt } from '@fortawesome/free-solid-svg-icons';
 
 const AdminDashboard = (props) => {
-
-
     const [showCatModal, setShowCatModal] = useState(false);
     const [showProdModal, setShowProdModal] = useState(false);
     const [showOrders, setShowOrders] = useState(false);
@@ -69,7 +67,6 @@ const AdminDashboard = (props) => {
         setShowProdModal(true);
 
         if (product && product.productImage !== undefined) {
-
             setId(product._id);
             setProductName(product.productName);
             setProductImage(product.productImage);
@@ -155,7 +152,6 @@ const AdminDashboard = (props) => {
             dispatch(saveProduct(formData))
         }
     }
-
 
     const showHeader = () => (
         <div className="bg-dark text-white pt-5 pb-4 mt-5">

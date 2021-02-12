@@ -118,7 +118,7 @@ const Home = (props) => {
                                                                         <Card className="mb-5" border="80">
                                                                             <Link to={"/product/" + product._id}>
                                                                                 <Card.Img height='200'
-                                                                                    src={server + "/" + product.productName}
+                                                                                    src={server + "/" + product.productName + ".jpg"}
                                                                                     alt={product.productName} />
                                                                             </Link>
                                                                             <Card.Body>

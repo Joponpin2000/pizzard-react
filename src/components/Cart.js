@@ -52,7 +52,7 @@ function CartScreen(props) {
                                                         <Fragment>
                                                             <Col md='6'>
                                                                 <Card>
-                                                                    <Card.Img className="product-image" src={server + "/" + item.productName} />
+                                                                    <Card.Img className="product-image" src={server + "/" + item.productName + ".jpg"} />
                                                                 </Card>
                                                             </Col>
                                                             <Col md='6'>

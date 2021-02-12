@@ -77,7 +77,7 @@ function PlaceOrderScreen(props) {
                                                 <Fragment>
                                                     <Col md='6'>
                                                         <Card>
-                                                            <Card.Img className="product-image" src={server + "/" + item.productName} alt={item.productName} />
+                                                            <Card.Img className="product-image" src={server + "/" + item.productName + ".jpg"} alt={item.productName} />
                                                         </Card>
                                                     </Col>
                                                     <Col md='6'>
