@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import isEmail from 'validator/lib/isEmail';
 import isEmpty from 'validator/lib/isEmpty';
 import equals from 'validator/lib/equals';
@@ -60,7 +60,7 @@ const Signup = (props) => {
                         <FontAwesomeIcon icon={faUser} />
                     </span>
                 </div>
-                <input name="username" autoFocus onChange={(e) => setUsername(e.target.value)} className="form-control" placeholder="Username" type="text" />
+                <input name="username" onChange={(e) => setUsername(e.target.value)} className="form-control" placeholder="Username" type="text" />
             </div>
             <div className="form-panel input-group">
                 <div className="input-group-grouped">
@@ -106,19 +106,19 @@ const Signup = (props) => {
     )
 
     return (
-<Fragment>
-    <Header />
-    <div className="signup-container">
-            <div className="row px-3 vh-100">
-                <div className="col-md-5 mx-auto pt-5 align-self-center">
-                    {successmsg && showSuccessMsg(successmsg)}
-                    {errormsg && showErrorMsg(errormsg)}
-                    {showSignupForm()}
+        <Fragment>
+            <Header />
+            <div className="signup-container">
+                <div className="row px-3 vh-100">
+                    <div className="col-md-5 mx-auto pt-5 align-self-center">
+                        {successmsg && showSuccessMsg(successmsg)}
+                        {errormsg && showErrorMsg(errormsg)}
+                        {showSignupForm()}
+                    </div>
                 </div>
             </div>
-        </div>
-<Footer />
-</Fragment>
+            <Footer />
+        </Fragment>
 
     );
 };

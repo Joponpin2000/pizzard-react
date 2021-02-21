@@ -42,7 +42,7 @@ const Shipping = (props) => {
             <div className="form-panel input-group">
                 <div className="input-group-grouped">
                 </div>
-                <input autoFocus name="address" onChange={(e) => setAddress(e.target.value)} className="form-control" placeholder="Address" type="text" />
+                <input name="address" onChange={(e) => setAddress(e.target.value)} className="form-control" placeholder="Address" type="text" />
             </div>
             <div className="form-panel input-group">
                 <div className="input-group-grouped">

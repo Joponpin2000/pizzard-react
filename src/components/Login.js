@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import isEmail from 'validator/lib/isEmail';
 import isEmpty from 'validator/lib/isEmpty';
 import { Link } from 'react-router-dom';
@@ -61,7 +61,7 @@ const Login = (props) => {
                 <input name="email" onChange={(e) => {
                     setEmail(e.target.value);
                     setErrormsg('');
-                }} autoFocus className="form-control" placeholder="Email address" type="email" />
+                }} className="form-control" placeholder="Email address" type="email" />
             </div>
             <div className="form-panel input-group">
                 <div className="input-group-grouped">
@@ -94,7 +94,7 @@ const Login = (props) => {
     );
 
     return (
-<Fragment>
+        <Fragment>
             <Header />
             <div className="login-container">
                 <div className="row px-3 vh-100">
@@ -104,8 +104,8 @@ const Login = (props) => {
                     </div>
                 </div>
             </div>
-    <Footer />
-</Fragment>
+            <Footer />
+        </Fragment>
 
 
     );

@@ -25,7 +25,7 @@ const Payment = (props) => {
         <form className="signup-form mt-5 grey-bg p-4" onSubmit={handleSubmit} noValidate>
             <div className="form-panel input-group px-3 py-3 bg-light ">
                 <div>
-                    <input autoFocus name="paymentMethod" onChange={(e) => setPaymentMethod(e.target.value)} value="Paystack" type="radio" />
+                    <input name="paymentMethod" onChange={(e) => setPaymentMethod(e.target.value)} value="Paystack" type="radio" />
                     {' '}
                     <label htmlFor="paymentMethod">
                         Paystack

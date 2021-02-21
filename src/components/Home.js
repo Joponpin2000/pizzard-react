@@ -156,7 +156,7 @@ const Home = (props) => {
                                             <form className="signup-form p-5 grey-bg text-white" onSubmit={handleSubmit} noValidate>
                                                 <Row>
                                                     <Col md="6" className="form-panel input-group">
-                                                        <input name="name" autoFocus onChange={(e) => setName(e.target.value)} className="form-control py-4" placeholder="Your Name" type="text" />
+                                                        <input name="name" onChange={(e) => setName(e.target.value)} className="form-control py-4" placeholder="Your Name" type="text" />
                                                     </Col>
                                                     <Col md="6" className="form-panel input-group">
                                                         <input name="email" onChange={(e) => setEmail(e.target.value)} className="form-control py-4" placeholder="Your Email" type="email" />
