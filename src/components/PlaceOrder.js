@@ -14,6 +14,10 @@ function PlaceOrderScreen(props) {
 
     const userSignin = useSelector(state => state.userSignin);
     const { userInfo } = userSignin;
+
+    const userPayment = useSelector(state => state.userPayment);
+    const { error } = userPayment;
+
     const dispatch = useDispatch();
     useEffect(() => {
 
@@ -55,6 +59,7 @@ function PlaceOrderScreen(props) {
                 <CheckoutSteps step1 step2 step3 step4 />
                 <Container>
                     <h4>Shipping</h4>
+                    {error && alert("Couldn't connect to Paystack")}
                     <Row>
                         <Col md='8'>
                             {cart.shipping.address}, {cart.shipping.city},

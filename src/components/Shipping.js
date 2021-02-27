@@ -9,12 +9,13 @@ import Header from './header';
 import Footer from './Footer';
 
 const Shipping = (props) => {
+
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
     const [postalCode, setPostalCode] = useState('');
     const [country, setCountry] = useState('');
     const [errormsg, setErrormsg] = useState('')
-
+    
     const dispatch = useDispatch();
 
     const handleSubmit = e => {

@@ -123,13 +123,13 @@ color: white;
 }
 
 .checkout-steps {
-    display: flex;
-    justify-content: space-between;
-    width: 40rem;
-    margin: 1rem auto;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* width: 40rem; */
+    /* margin: 1rem auto; */
     background-color: white;
-    padding: 15px;
-    margin: 15px;
+    padding: 15px 5px;
+    /* margin: 15px; */
 }
 
 .checkout-steps>div {

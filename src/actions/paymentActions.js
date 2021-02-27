@@ -16,7 +16,7 @@ const makePayment = (paymentData) => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: MAKE_PAYMENT_FAIL,
-            payload: error.response.data.errorMessage
+            payload: "Error occured try again later"
         })
     }
 }

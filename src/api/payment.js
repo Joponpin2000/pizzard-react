@@ -10,7 +10,7 @@ export const pay = async (paymentData) => {
             "Content-Type": "application/json",
             "Authorization": "Bearer " + cookie,
         },
-        withCredentials: true
+        // withCredentials: true
     }
 
     const response = await axios.post(server + '/api/paystack/pay', paymentData, config);

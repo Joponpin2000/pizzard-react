@@ -9,7 +9,7 @@ export const getOrders = async () => {
             "Content-Type": "application/json",
             "Authorization": "Bearer " + cookie,
         },
-        withCredentials: true
+        // withCredentials: true
     }
     const response = await axios.get(server + '/api/orders', config);
 

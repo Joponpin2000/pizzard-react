@@ -30,6 +30,7 @@ export const signInUser = async (data) => {
             'Content-Type': 'application/json',
         }
     }
+
     const response = await axios.post(server + '/api/auth/login', data, config);
     return response;
 }
