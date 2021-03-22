@@ -57,7 +57,7 @@ function PlaceOrderScreen(props) {
             <Header />
             <div className="py-5 grey-bg">
                 <CheckoutSteps step1 step2 step3 step4 />
-                <Container>
+                <Container className="py-5 grey-bg">
                     <h4>Shipping</h4>
                     {error && alert("Couldn't connect to Paystack")}
                     <Row>
@@ -82,7 +82,7 @@ function PlaceOrderScreen(props) {
                                                 <Fragment>
                                                     <Col md='6'>
                                                         <Card>
-                                                            <Card.Img className="product-image" src={server + "/" + item.productName + ".jpg"} alt={item.productName} />
+                                                            <Card.Img className="product-image" src={server + "/" + item.productName + ".jpeg"} alt={item.productName} />
                                                         </Card>
                                                     </Col>
                                                     <Col md='6'>
@@ -117,7 +117,7 @@ function PlaceOrderScreen(props) {
                                         <p>Tax: ${taxPrice}</p>
                                         <p>Order Total: <b>${totalPrice}</b></p>
                                     </div>
-                                    <Button onClick={placeOrderHandler || alert("Couldn't connect to Paystack")} variant="outline-success" className="btn-block">Place Order</Button>
+                                    <Button onClick={placeOrderHandler || alert("Couldn't connect to Paystack")} className="btn-block">Place Order</Button>
                                 </Card.Body>
                             </Card>
                         </Col>

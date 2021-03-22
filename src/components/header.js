@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { isAuthenticated, logout } from '../helpers/auth';
-import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { getNumbers } from '../actions/getAction';
 import { useSelector } from 'react-redux';
@@ -21,44 +20,70 @@ const Header = (props) => {
 
 
     const showNavigation = () => (
-        <Navbar bg="white" expand="md" fixed="top">
-                <Navbar.Brand href="/" className="text-success my-2 pl-3"><img src={require("./images/logo-3.png")} height="40" alt="Logo img" /></Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav text-white" />
-                <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-                    <Nav >
-                        {!isAuthenticated() && (
-                            <Fragment>
-                                <Nav.Link href="/">Home</Nav.Link>
-                                <Nav.Link href="/signup">Signup</Nav.Link>
-                                <Nav.Link href="/login">Login</Nav.Link>
-                            </Fragment>
-                        )}
-                        {isAuthenticated() && isAuthenticated().role === 0 && (
-                            <Fragment>
-                                <Nav.Link href="/user/dashboard">Dashboard</Nav.Link>
-                                <Nav.Link href="/cart">Cart <span></span></Nav.Link>
-                            </Fragment>
-                        )}
-                        {isAuthenticated() && isAuthenticated().role === 1 && (
-                            <Fragment>
-                                <Nav.Link href="/admin/dashboard">Dashboard</Nav.Link>
-                            </Fragment>
-                        )}
-                        {userInfo && isAuthenticated() && (
-                            <Fragment>
-                                <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-                            </Fragment>
-                        )}
-                    </Nav>
-                </Navbar.Collapse>
-        </Navbar >
+        <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div className="container-fluid">
+                <Link className="navbar-brand js-scroll-trigger" to="/">
+                    <img className="img-fluid" src={require("./images/logo-3.png")} height="40" alt="Logo img" />
+                </Link>
+                <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+          <i className="fa fa-bars"></i>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarResponsive">
+                    <ul className="navbar-nav ml-auto">
+                        <Nav>
+                            {!isAuthenticated() && (
+                                <Fragment>
+                                    <li className="nav-item">
+                                        <Nav.Link className="nav-link js-scroll-trigger" to="/"><span className="text-white">Home</span></Nav.Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Nav.Link className="nav-link js-scroll-trigger" to="/signup"><span className="text-white">Signup</span></Nav.Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Nav.Link className="nav-link js-scroll-trigger" to="/login"><span className="text-white">Login</span></Nav.Link>
+                                    </li>
+                                </Fragment>
+                            )}
+                            {isAuthenticated() && isAuthenticated().role === 0 && (
+                                <Fragment>
+                                    <li className="nav-item">
+                                        <Nav.Link className="nav-link js-scroll-trigger" to="/user/dashboard"><span className="text-white">Dashboard</span></Nav.Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Nav.Link className="nav-link js-scroll-trigger" to="/cart"><span className="text-white">Cart</span></Nav.Link>
+                                    </li>
+                                </Fragment>
+                            )}
+                            {isAuthenticated() && isAuthenticated().role === 1 && (
+                                <Fragment>
+
+                                    <li className="nav-item">
+                                        <Nav.Link className="nav-link js-scroll-trigger" to="/admin/dashboard"><span className="text-white">Dashboard</span></Nav.Link>
+                                    </li>
+                                </Fragment>
+                            )}
+                            {userInfo && isAuthenticated() && (
+                                <Fragment>
+                                    <li className="nav-item">
+                                        <Nav.Link className="nav-link js-scroll-trigger" onClick={handleLogout} ><span className="text-white">Logout</span></Nav.Link>
+                                    </li>
+                                </Fragment>
+                            )}
+                        </Nav>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
     );
 
     return (
-        <header id="mu-header">
-            {showNavigation()}
-        </header>
+        // <header id="mu-header">
+        showNavigation()
+        // </header>
     );
+
 }
 
 export default withRouter(Header);

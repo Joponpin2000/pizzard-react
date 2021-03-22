@@ -52,7 +52,7 @@ function CartScreen(props) {
                                                         <Fragment>
                                                             <Col md='6'>
                                                                 <Card>
-                                                                    <Card.Img className="product-image" src={server + "/" + item.productName + ".jpg"} />
+                                                                    <Card.Img className="product-image" src={server + "/" + item.productName + ".jpeg"} />
                                                                 </Card>
                                                             </Col>
                                                             <Col md='6'>
@@ -72,7 +72,7 @@ function CartScreen(props) {
                                                                                 <option key={x + 1} value={x + 1}>{x + 1}</option>
                                                                             )}
                                                                         </select>
-                                                                        <Button type="button" onClick={() => removeFromCartHandler(item.productId)} variant="success">delete</Button>
+                                                                        <Button type="button" onClick={() => removeFromCartHandler(item.productId)} >delete</Button>
                                                                     </Card.Body>
                                                                 </Card>
                                                             </Col>
@@ -92,7 +92,7 @@ function CartScreen(props) {
                                                             ${cartItems.reduce((a, c) => Math.round(a + c.productPrice * c.qty), 0)}
                                             </Card.Text>
                                             {
-                                                <Button type="submit" onClick={checkoutHandler} variant="outline-success" className="btn-block" disabled={cartItems.length === 0}>Proceed to Checkout</Button>
+                                                <Button type="submit" onClick={checkoutHandler} className="btn-block" disabled={cartItems.length === 0}>Proceed to Checkout</Button>
                                             }
                                         </Card.Body>
                                     </Card>

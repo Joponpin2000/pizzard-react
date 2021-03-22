@@ -1,81 +1,173 @@
 import React, { Fragment, useEffect } from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link, withRouter } from 'react-router-dom';
 import { getNumbers } from '../actions/getAction';
-import { isAuthenticated } from '../helpers/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationArrow, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard, faPhone, faMailBulk } from '@fortawesome/free-solid-svg-icons';
+import { isAuthenticated, logout } from '../helpers/auth';
+import { useSelector } from 'react-redux';
 
 function Footer(props) {
+
+    const userSignin = useSelector(state => state.userSignin);
+    const { userInfo } = userSignin;
+    const handleLogout = () => {
+        logout(() => {
+            props.history.push('/');
+        });
+    }
+
     useEffect(() => {
         getNumbers();
     }, [])
 
     return (
 
-        <footer>
-            <Container>
-                <hr className="mb-4"/>
-                <Row>
-                    <Col md='3' lg='3' className="mb-5">
-                        <Link to="/">
-                            <img className="mb-2" src={require("./images/logo-3.png")} height="40" alt="Logo img" />
-                        </Link>
-                        <p className="mt-3">Baked Italian pizzas at your fingertips.
-                        One thousand flavors in one place.
-                        Problems come and go. Pizza is forever.
-                        </p>
-                        Give in to the <b><i className="text-success">taste</i></b>!
-                    </Col>
-                    <Col md='3' lg='3'>
-                        <h3 className="mb-3">Links</h3>
-                        <ul>
-                            {!isAuthenticated() && (
-                                <Fragment>
-                                    <li><Link to="/" className="text-success footer-nav-link">Home</Link></li>
-                                    <li><Link to="/signup" className="text-success footer-nav-link">Signup</Link></li>
-                                    <li><Link to="/login" className="text-success footer-nav-link">Login</Link></li>
-                                </Fragment>
-                            )}
-                            {isAuthenticated() && isAuthenticated().role === 0 && (
-                                <Fragment>
-                                    <li><Link to="/" className="text-success footer-nav-link">Home</Link></li>
-                                    <li><Link to="/cart" className="text-success footer-nav-link">Cart <span></span></Link></li>
-                                </Fragment>
-                            )}
-                            {isAuthenticated() && isAuthenticated().role === 1 && (
-                                <Fragment>
-                                    <li><Link to="/" className="text-success footer-nav-link">Home</Link></li>
-                                    <li><Link to="/admin/dashboard" className="text-success footer-nav-link">Dashboard</Link></li>
-                                </Fragment>
-                            )}
-                        </ul>
-                    </Col>
-                    <Col md='3' lg='3' className="mb-5">
-                        <h3 className="mb-3">Contact Us</h3>
-                        <p >
-                            <Button variant="success" className="price-btn"> <FontAwesomeIcon icon={faLocationArrow} /></Button>
-                            {' '} No.1, 127.0.0.1 Close
-                        </p>
-                        <p >
-                            <Button variant="success" className="price-btn"> <FontAwesomeIcon icon={faPhone} /></Button>
-                             {' '} +234 81 096 225 18
-                        </p>
-                    </Col>
-                    <Col md='3' lg='3' className="mb-5">
-                        <h3 className="mb-3">Open Hours</h3>
-                        <p >Monday - Friday 7am to 9pm</p>
-                        <p >Saturday 8am to 10pm</p>
-                        <p >Sunday 12pm to 6pm</p>
-                    </Col>
-                </Row>
-                <Row id="footer">
-                    <Col md='6' sm='6' lg='6' className="mx-auto pt-5 text-center">All Rights Reserved. © 2020 {' '}
-                        <Link to="/" className="text-success">Pizzards</Link> Developed by <a href="https://jofedo.netlify.app" className="text-success">Joseph Idowu</a>
-                    </Col>
-                </Row>
-            </Container>
-        </footer>
+        <div>
+            <footer className="main-footer">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-4 col-md-6 col-sm-12">
+                            <div className="mb-3 img-logo">
+                                <Link to="/">
+                                    <img src={require("./images/logo-3.png")} alt="Pizzards logo" />
+                                </Link>
+                                <p>Baked Italian pizzas at your fingertips. One thousand flavors in one place.</p>
+                                <p>Problems come and go, pizza is for ever.</p>
+                                <p><i>Give in to the taste|.</i></p>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-6 col-sm-12">
+                            <h4 className="mb-4 ph-fonts-style foot-title">
+                                Recent Link
+					</h4>
+                            <ul className="ph-links-column">
+
+                                {!isAuthenticated() && (
+                                    <Fragment>
+                                        <li>
+                                            <Link className="nav-link js-scroll-trigger" to="/"><span >Home</span></Link>
+                                        </li>
+                                        <li>
+                                            <Link className="nav-link js-scroll-trigger" to="/signup"><span >Signup</span></Link>
+                                        </li>
+                                        <li>
+                                            <Link className="nav-link js-scroll-trigger" to="/login"><span >Login</span></Link>
+                                        </li>
+                                    </Fragment>
+                                )}
+                                {isAuthenticated() && isAuthenticated().role === 0 && (
+                                    <Fragment>
+                                        <li>
+                                            <Link className="nav-link js-scroll-trigger" to="/user/dashboard"><span >Dashboard</span></Link>
+                                        </li>
+                                        <li>
+                                            <Link className="nav-link js-scroll-trigger" to="/cart"><span >Cart</span></Link>
+                                        </li>
+                                    </Fragment>
+                                )}
+                                {isAuthenticated() && isAuthenticated().role === 1 && (
+                                    <Fragment>
+
+                                        <li>
+                                            <Link className="nav-link js-scroll-trigger" to="/admin/dashboard"><span >Dashboard</span></Link>
+                                        </li>
+                                    </Fragment>
+                                )}
+                                {userInfo && isAuthenticated() && (
+                                    <Fragment>
+                                        <li>
+                                            <Link className="nav-link js-scroll-trigger" onClick={handleLogout} ><span >Logout</span></Link>
+                                        </li>
+                                    </Fragment>
+                                )}
+                            </ul>
+                        </div>
+                        <div className="col-lg-4 col-md-6 col-sm-12">
+                            <h4 className="mb-4 ph-fonts-style foot-title">
+                                Contact Us
+					</h4>
+                            <div className="cont-box-footer">
+                                <div className="cont-line">
+                                    <div className="icon-b">
+                                        <i aria-hidden="true">
+                                            <FontAwesomeIcon icon={faAddressCard} className="flaticon-review" />
+
+                                        </i>
+
+                                    </div>
+                                    <div className="cont-dit">
+                                        <p>75 Avenue Way St. Peters.</p>
+                                    </div>
+                                </div>
+                                <div className="cont-line">
+                                    <div className="icon-b">
+                                        <i aria-hidden="true">
+                                            <FontAwesomeIcon icon={faPhone} className="flaticon-review" />
+
+                                        </i>
+
+                                    </div>
+                                    <div className="cont-dit">
+                                        <p>+234 81 0962 2518</p>
+                                    </div>
+                                </div>
+                                <div className="cont-line">
+                                    <div className="icon-b">
+                                        <i aria-hidden="true">
+                                            <FontAwesomeIcon icon={faMailBulk} className="flaticon-review" />
+
+                                        </i>
+
+                                    </div>
+                                    <div className="cont-dit">
+                                        <p>idowuayanfeoluwa@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <div className="copyrights">
+                <div className="container-fluid">
+                    <div className="footer-distributed">
+                        <div className="footer-left">
+                            <p className="footer-links">
+                                {!isAuthenticated() && (
+                                    <Fragment>
+                                        <Link className="nav-link js-scroll-trigger" to="/"><span >Home</span></Link>
+                                        <Link className="nav-link js-scroll-trigger" to="/signup"><span >Signup</span></Link>
+                                        <Link className="nav-link js-scroll-trigger" to="/login"><span >Login</span></Link>
+                                    </Fragment>
+                                )}
+                                {isAuthenticated() && isAuthenticated().role === 0 && (
+                                    <Fragment>
+                                        <Link className="nav-link js-scroll-trigger" to="/user/dashboard"><span >Dashboard</span></Link>
+                                        <Link className="nav-link js-scroll-trigger" to="/cart"><span >Cart</span></Link>
+                                    </Fragment>
+                                )}
+                                {isAuthenticated() && isAuthenticated().role === 1 && (
+                                    <Fragment>
+
+                                        <Link className="nav-link js-scroll-trigger" to="/admin/dashboard"><span >Dashboard</span></Link>
+                                    </Fragment>
+                                )}
+                                {userInfo && isAuthenticated() && (
+                                    <Fragment>
+                                        <Link className="nav-link js-scroll-trigger" onClick={handleLogout} ><span >Logout</span></Link>
+                                    </Fragment>
+                                )}
+                            </p>
+                            <p className="footer-company-name">All Rights Reserved. &copy; 2021 <Link to="/">Pizzards</Link> Developed By:
+					<Link to="https://devjo.netlify.app"> Dev-Jo</Link></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Link to="/" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></Link>
+        </div>
+
     )
 }
 
