@@ -55,157 +55,153 @@ const Home = (props) => {
                     error ? (<div>{error}</div>) : (
                         <Fragment>
                             <Header />
-                            <div className="mt-3 pt-5">
-                                < div className="grey-bg">
-                                    <section id="home" className="item slider-screen">
-                                        <Carousel interval={3000} className="item slider-screen">
-                                            <Carousel.Item clasasName="slider-new-2 owl-carousel owl-theme">
-                                                <img className="d-block w-100 img-height slider-img-full" src={Slider01} alt="First slide" />
-                                                <Carousel.Caption>
-                                                    <div className="container">
-                                                        <div className="slider-content text-white mb-5 pb-5">
-                                                            <div className="in-box">
-                                                                <h2>Awesome Pizza Restaurant</h2>
-                                                                <p >..one thousand flavors in one place.</p>
-                                                            </div>
-                                                        </div>
+                            <div className="pt-5">
+                                <Carousel interval={3000}>
+                                    <Carousel.Item className="slider-screen">
+                                        <img className="d-block w-100 img-height slider-img-full" src={Slider01} alt="First slide" />
+                                        <Carousel.Caption className="slider-content">
+                                            <div className="container">
+                                                <div className="text-white mb-5 pb-5">
+                                                    <div className="in-box">
+                                                        <h2>Awesome Pizza Restaurant</h2>
+                                                        <p >..one thousand flavors in one place.</p>
                                                     </div>
-                                                </Carousel.Caption>
-                                            </Carousel.Item>
-                                            <Carousel.Item>
-                                                <img className="d-block w-100 img-height" src={Slider02} alt="Second slide" />
-                                                <Carousel.Caption>
-                                                    <div className="container">
-                                                        <div className="slider-content text-white mb-5 pb-5">
-                                                            <div className="in-box">
-                                                                <h2>Baked Delicious Pizzas</h2>
-                                                                <p>..at your fingertips.</p>
-                                                            </div>
-                                                        </div>
+                                                </div>
+                                            </div>
+                                        </Carousel.Caption>
+                                    </Carousel.Item>
+                                    <Carousel.Item className="slider-screen">
+                                        <img className="d-block w-100 img-height slider-img-full" src={Slider02} alt="Second slide" />
+                                        <Carousel.Caption className="slider-content">
+                                            <div className="container">
+                                                <div className="text-white mb-5 pb-5">
+                                                    <div className="in-box">
+                                                        <h2>Baked Delicious Pizzas</h2>
+                                                        <p>..at your fingertips.</p>
                                                     </div>
-                                                </Carousel.Caption>
-                                            </Carousel.Item>
-                                            <Carousel.Item>
-                                                <img className="d-block w-100 img-height" src={Slider03} alt="First slide" />
-                                                <Carousel.Caption>
-                                                    <div className="container">
-                                                        <div className="slider-content text-white mb-5 pb-5">
-                                                            <div className="in-box">
-                                                                <h2>Welcome to Pizzards</h2>
-                                                                <p>..one thousand flavors in one place.</p>
-                                                            </div>
-                                                        </div>
+                                                </div>
+                                            </div>
+                                        </Carousel.Caption>
+                                    </Carousel.Item>
+                                    <Carousel.Item className="slider-screen">
+                                        <img className="d-block w-100 img-height slider-img-full" src={Slider03} alt="First slide" />
+                                        <Carousel.Caption className="slider-content">
+                                            <div className="container">
+                                                <div className="slider-content text-white mb-5 pb-5">
+                                                    <div className="in-box">
+                                                        <h2>Welcome to Pizzards</h2>
+                                                        <p>..one thousand flavors in one place.</p>
                                                     </div>
-                                                </Carousel.Caption>
-                                            </Carousel.Item>
-                                        </Carousel>
-                                    </section>
+                                                </div>
+                                            </div>
+                                        </Carousel.Caption>
+                                    </Carousel.Item>
+                                </Carousel>
 
-                                    <div id="about" className="section lb">
-                                        <div className="container-fluid">
-                                            <div className="row">
-                                                <div className="col-md-6">
-                                                    <div className="message-box">
-                                                        <h2>Welcome To Pizzards Restaurant.</h2>
-                                                        <p>Pizzards is a new player in the pizza restaurant industry.
-                                                        Bolstere by the need for more choices in great tasting pizza experiences,
-                                                        combined with the option for home-delivery, the restaurant is positioned
+                                <div id="about" className="section lb">
+                                    <div className="container-fluid">
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <div className="message-box">
+                                                    <h2>Welcome To Pizzards Restaurant.</h2>
+                                                    <p>Pizzards is a new player in the pizza restaurant industry.
+                                                    Bolstere by the need for more choices in great tasting pizza experiences,
+                                                    combined with the option for home-delivery, the restaurant is positioned
                                                                to take advantage of the market need and serve customers all over the world.</p>
-                                                        <p>We look to provide the best possible value to our customers who desire great tasting pizza.
+                                                    <p>We look to provide the best possible value to our customers who desire great tasting pizza.
                                                             We've got you covered with menus from over 107 delicious pizzas online.</p>
-                                                        <ul>
-                                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                                            <li>Nullam ut massa id odio imperdiet consequat.</li>
-                                                            <li>Cras ullamcorper nisi eget condimentum aliquet. </li>
-                                                            <li>Cras id libero iaculis, sodales ligula vitae, egestas odio.</li>
-                                                            <li>Aenean congue ex et bibendum porta.</li>
-                                                        </ul>
-                                                    </div>
+                                                    <ul>
+                                                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                        <li>Nullam ut massa id odio imperdiet consequat.</li>
+                                                        <li>Cras ullamcorper nisi eget condimentum aliquet. </li>
+                                                        <li>Cras id libero iaculis, sodales ligula vitae, egestas odio.</li>
+                                                        <li>Aenean congue ex et bibendum porta.</li>
+                                                    </ul>
                                                 </div>
+                                            </div>
 
-                                                <div className="col-md-6">
-                                                    <div className="right-box-pro wow fadeIn">
-                                                        <img src={SideImage} alt="" className="img-fluid img-rounded" />
-                                                    </div>
+                                            <div className="col-md-6">
+                                                <div className="right-box-pro wow fadeIn">
+                                                    <img src={SideImage} alt="" className="img-fluid img-rounded" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div className="section cont-box">
-                                        <div className="container-fluid">
-                                            <div className="row">
-                                                <div className="col-lg-3 col-sm-6 col-xs-12">
-                                                    <div className="inner-cont-box">
+                                <div className="section cont-box">
+                                    <div className="container-fluid">
+                                        <div className="row">
+                                            <div className="col-lg-3 col-sm-6 col-xs-12">
+                                                <div className="inner-cont-box">
 
-                                                        <h3 className="counter-number">5000</h3>
-                                                        <h4>Client</h4>
-                                                    </div>
+                                                    <h3 className="counter-number">5000</h3>
+                                                    <h4>Client</h4>
                                                 </div>
-                                                <div className="col-lg-3 col-sm-6 col-xs-12">
-                                                    <div className="inner-cont-box">
-                                                        <h3 className="counter-number">3000</h3>
-                                                        <h4>Time Of Work</h4>
-                                                    </div>
+                                            </div>
+                                            <div className="col-lg-3 col-sm-6 col-xs-12">
+                                                <div className="inner-cont-box">
+                                                    <h3 className="counter-number">3000</h3>
+                                                    <h4>Time Of Work</h4>
                                                 </div>
-                                                <div className="col-lg-3 col-sm-6 col-xs-12">
-                                                    <div className="inner-cont-box">
-                                                        <h3 className="counter-number">2000</h3>
-                                                        <h4>Ideas</h4>
-                                                    </div>
+                                            </div>
+                                            <div className="col-lg-3 col-sm-6 col-xs-12">
+                                                <div className="inner-cont-box">
+                                                    <h3 className="counter-number">2000</h3>
+                                                    <h4>Ideas</h4>
                                                 </div>
-                                                <div className="col-lg-3 col-sm-6 col-xs-12">
-                                                    <div className="inner-cont-box">
-                                                        <h3 className="counter-number">8000</h3>
-                                                        <h4>Project Done</h4>
-                                                    </div>
+                                            </div>
+                                            <div className="col-lg-3 col-sm-6 col-xs-12">
+                                                <div className="inner-cont-box">
+                                                    <h3 className="counter-number">8000</h3>
+                                                    <h4>Project Done</h4>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
 
-                                    {products
-                                        ?
-                                        (
-                                            <div id="menu" className="section lb">
-                                                <div className="container-fluid">
-                                                    <div className="section-title text-center">
-                                                        <h3>Menu</h3>
-                                                        <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.</p>
-                                                    </div>
-                                                    <div className="row">
-                                                        {
-                                                            products.map((product, i) =>
-                                                                (product && product.productImage !== undefined) && (
+                                {products
+                                    ?
+                                    (
+                                        <div id="menu" className="section lb">
+                                            <div className="container-fluid">
+                                                <div className="section-title text-center">
+                                                    <h3>Menu</h3>
+                                                    <p className="text-secondary">One thousand flavors in one place.</p>
+                                                </div>
+                                                <div className="row">
+                                                    {
+                                                        products.map((product, i) =>
+                                                            (product && product.productImage !== undefined) && (
 
-                                                                    <div className="col-md-3" key={i}>
-                                                                        <div className="services-inner-box">
-                                                                            <div className="ser-icon">
-                                                                                <img src={server + "/" + product.productName + ".jpeg"} alt={product.productName} className="img-fluid" />
-                                                                            </div>
-                                                                            <h2>{product.productName}</h2>
-                                                                            <Link to={"/product/" + product._id} className="hvr-radial-in" >$ {product.productPrice}</Link>
+                                                                <div className="col-md-3" key={i}>
+                                                                    <div className="services-inner-box">
+                                                                        <div className="ser-icon">
+                                                                            <img src={server + "/" + product.productName + ".jpeg"} alt={product.productName} className="img-fluid" />
                                                                         </div>
-
+                                                                        <h2>{product.productName}</h2>
+                                                                        <Link to={"/product/" + product._id} className="hvr-radial-in" >$ {product.productPrice}</Link>
                                                                     </div>
-                                                                )
+
+                                                                </div>
                                                             )
-                                                        }
-                                                    </div>
+                                                        )
+                                                    }
                                                 </div>
                                             </div>
-                                        )
-                                        :
-                                        <div className="text-center mx-5 my-5 py-5" > {showLoading()}</div>
-                                    }
-                                </div >
+                                        </div>
+                                    )
+                                    :
+                                    <div className="text-center mx-5 my-5 py-5" > {showLoading()}</div>
+                                }
 
                                 <div id="chef" className="section wb">
                                     <div className="container-fluid">
                                         <div className="section-title text-center">
                                             <h3>Meet Our Team</h3>
-                                            <p>The best in the business!</p>
+                                            <p className="text-secondary">The best in the business!</p>
                                         </div>
 
                                         <div className="row">

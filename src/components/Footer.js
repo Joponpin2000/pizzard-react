@@ -31,9 +31,9 @@ function Footer(props) {
                                 <Link to="/">
                                     <img src={require("./images/logo-3.png")} alt="Pizzards logo" />
                                 </Link>
-                                <p>Baked Italian pizzas at your fingertips. One thousand flavors in one place.</p>
-                                <p>Problems come and go, pizza is for ever.</p>
-                                <p><i>Give in to the taste|.</i></p>
+                                <p className="text-secondary">Baked Italian pizzas at your fingertips. One thousand flavors in one place.</p>
+                                <p className="text-secondary">Problems come and go, pizza is for ever.</p>
+                                <p className="text-secondary"><i>Give in to the taste|.</i></p>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 col-sm-12">

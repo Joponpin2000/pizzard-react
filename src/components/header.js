@@ -4,6 +4,8 @@ import { isAuthenticated, logout } from '../helpers/auth';
 import Nav from 'react-bootstrap/Nav';
 import { getNumbers } from '../actions/getAction';
 import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Header = (props) => {
     const userSignin = useSelector(state => state.userSignin);
@@ -27,7 +29,7 @@ const Header = (props) => {
                 </Link>
                 <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
-          <i className="fa fa-bars"></i>
+                    <FontAwesomeIcon icon={faBars} className="flaticon-review text-secondary" />
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ml-auto">
